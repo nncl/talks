@@ -6,6 +6,11 @@
 3. $scope, $rootScope, promises, $http
 4. Promises in one image: ...
 
+==
+
+1. O que é uma App Híbrida
+2.
+
 ## API
 
-[OMDB API](http://www.omdbapi.com)
+[Marvel API](https://developer.marvel.com/)
