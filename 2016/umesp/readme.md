@@ -1,15 +1,13 @@
-# Palestra UMESP 2016
+# Palestra UMESP 2016 - Construindo Apps com Ionic Framework
 
-0. App Híbrido
-1. Ionic Framework
-2. AngularJS
-3. $scope, $rootScope, promises, $http
-4. Promises in one image: ...
+## Tópicos
 
-==
-
-1. O que é uma App Híbrida
-2.
+1. O que são Apps Híbridos
+2. O que é o Ionic?
+3. O que vamos usar
+4. Case
+5. Antes de tudo...
+6. Apps desenvolvidos com Ionic
 
 ## API
 
