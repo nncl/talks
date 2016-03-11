@@ -1,0 +1,25 @@
+<ion-view view-title="Heróis/Anti H Marvel">
+  <ion-content ng-show="show">
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="model.search.name">
+      </label>
+    </div>
+
+    <div class="list">
+
+        <a class="item item-avatar" href="#/app/heroi/{{h.id}}"
+          ng-repeat="h in herois | filter : model.search">
+          <img ng-src="{{h.thumbnail.path}}/portrait_xlarge.jpg">
+          <h2> {{h.name}} </h2>
+          <p>
+              {{h.description}}
+          </p>
+        </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

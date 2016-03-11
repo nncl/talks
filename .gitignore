@@ -2,3 +2,7 @@
 node_modules
 npm-debug.log
 vendor
+plugins
+platforms
+hooks
+lib/*
