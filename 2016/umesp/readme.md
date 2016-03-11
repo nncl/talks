@@ -1,5 +1,12 @@
 # Palestra UMESP 2016 - Construindo Apps com Ionic Framework
 
+## Info
+
+Local: Universidade Metodista de São Paulo
+Sala: Lambda 454
+Tema: Construindo Apps com Ionic Framework
+Data: 11/04/16 - 18h às 19h
+
 ## Tópicos
 
 1. O que são Apps Híbridos
