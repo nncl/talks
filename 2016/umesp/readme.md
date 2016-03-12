@@ -2,10 +2,10 @@
 
 ## Info
 
-Local: Universidade Metodista de São Paulo
-Sala: Lambda 454
-Tema: Construindo Apps com Ionic Framework
-Data: 11/04/16 - 18h às 19h
+* Local: Universidade Metodista de São Paulo
+* Sala: Lambda 454
+* Tema: Construindo Apps com Ionic Framework
+* Data: 11/04/16 - 18h às 19h
 
 ## Tópicos
 
