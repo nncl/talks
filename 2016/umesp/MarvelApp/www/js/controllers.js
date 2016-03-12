@@ -92,7 +92,6 @@ angular.module('starter.controllers', [])
       $ionicLoading.hide();
 
       $scope.show = true;
-      console.log(res);
       $scope.herois = res.data.results;
     },
 
@@ -111,7 +110,9 @@ angular.module('starter.controllers', [])
       var d = $q.defer();
 
       $http.get('http://gateway.marvel.com:80/v1/public/characters?apikey=d0916763ab4a25748179417ef3627a75')
+      // $http.get('./data/heroesList.json')
         .success(function(res){
+          console.log(res);
           d.resolve(res);
         })
 
