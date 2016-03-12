@@ -1,21 +1,21 @@
 <ion-view view-title="Playlist">
-  <ion-content>
+  <ion-content ng-show="show">
 
-<div class="list card">
+    <div class="list card">
 
-  <div class="item item-avatar">
-    <img ng-src=" {{heroi.thumbnail.path}}/portrait_xlarge.jpg ">
-    <h2> {{heroi.name}} </h2>
-  </div>
+      <div class="item item-avatar">
+        <img ng-src=" {{heroi.thumbnail.path}}/portrait_xlarge.jpg ">
+        <h2> {{heroi.name}} </h2>
+      </div>
 
-  <div class="item item-body">
-    <img class="full-image" ng-src="{{heroi.thumbnail.path}}/portrait_xlarge.jpg">
-    <p>
-      {{heroi.description}}
-    </p>
-  </div>
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{heroi.thumbnail.path}}/portrait_xlarge.jpg">
+        <p>
+          {{heroi.description}}
+        </p>
+      </div>
 
-</div>
+    </div>
 
   </ion-content>
 </ion-view>

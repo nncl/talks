@@ -54,17 +54,20 @@ angular.module('starter.controllers', [])
 
 .controller('HeroiCtrl', function($scope, $stateParams, $ionicLoading, HeroisService) {
   $ionicLoading.show({
-    template: 'Carregando'
+    template: '<ion-spinner icon="spiral"></ion-spinner>'
   });
+
+  $scope.show = false;
 
   var heroiId = $stateParams.id;
   $scope.heroi = {};
 
   HeroisService.getHero(heroiId).then(
     function success(res){
+      $scope.heroi = res.data.results[0];
+      $scope.show = true;
       $ionicLoading.hide();
       console.log(res);
-      $scope.heroi = res.data.results[0];
       console.log($scope.heroi);
     },
 
@@ -81,7 +84,7 @@ angular.module('starter.controllers', [])
   $scope.show = false;
 
   $ionicLoading.show({
-    template: 'Carregando'
+    template: '<ion-spinner icon="spiral"></ion-spinner>'
   });
 
   HeroisService.getHeroes().then(
