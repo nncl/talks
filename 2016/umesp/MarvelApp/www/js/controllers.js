@@ -52,90 +52,42 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('HeroiCtrl', function($scope, $stateParams, $ionicLoading, HeroisService) {
-  $ionicLoading.show({
-    template: '<ion-spinner icon="spiral"></ion-spinner>'
-  });
+.controller('HeroiCtrl', function() {
 
-  $scope.show = false;
+  // HeroisService.getHero(heroiId).then(
+  //   function success(res){
+  //     $scope.heroi = res.data.results[0];
+  //   },
 
-  var heroiId = $stateParams.id;
-  $scope.heroi = {};
+  //   function error(err){
+  //   }
+  // );
 
-  HeroisService.getHero(heroiId).then(
-    function success(res){
-      $scope.heroi = res.data.results[0];
-      $scope.show = true;
-      $ionicLoading.hide();
-      console.log(res);
-      console.log($scope.heroi);
-    },
-
-    function error(err){
-      $ionicLoading.hide();
-      console.log('Erro');
-      console.log(err);
-    }
-  );
 })
 
-.controller('BrowseCtrl', function($scope, $stateParams, $ionicLoading, HeroisService) {
-  $scope.herois = [];
-  $scope.show = false;
+.controller('BrowseCtrl', function() {
+  // $scope.herois = [];
 
-  $ionicLoading.show({
-    template: '<ion-spinner icon="spiral"></ion-spinner>'
-  });
+  // HeroisService.getHeroes().then(
+  //   function success(res){
+  //     $scope.herois = res.data.results;
+  //   },
 
-  HeroisService.getHeroes().then(
-    function success(res){
-      $ionicLoading.hide();
-
-      $scope.show = true;
-      $scope.herois = res.data.results;
-    },
-
-    function error(err){
-      $ionicLoading.hide();
-
-      console.error('Erro');
-      console.error(err);
-    }
-  );
+  //   function error(err){
+  //   }
+  // );
 })
 
-.service('HeroisService', function($q, $http) {
+.service('HeroisService', function() {
+
   var self = {
     'getHeroes' : function(){
-      var d = $q.defer();
-
-      $http.get('http://gateway.marvel.com:80/v1/public/characters?apikey=d0916763ab4a25748179417ef3627a75')
+      // http://gateway.marvel.com:80/v1/public/characters?apikey=d0916763ab4a25748179417ef3627a75
       // $http.get('./data/heroesList.json')
-        .success(function(res){
-          console.log(res);
-          d.resolve(res);
-        })
-
-        .error(function(err){
-          d.reject(err);
-        })
-
-      return d.promise;
     },
 
     'getHero' : function(data){
-      var d = $q.defer();
-
-      $http.get('http://gateway.marvel.com:80/v1/public/characters/'+data+'?apikey=d0916763ab4a25748179417ef3627a75')
-        .success(function(res){
-          d.resolve(res);
-        })
-
-        .error(function(err){
-          d.reject(err);
-        })
-
-      return d.promise;
+      // http://gateway.marvel.com:80/v1/public/characters/'+data+'?apikey=d0916763ab4a25748179417ef3627a75
     }
   };
 
