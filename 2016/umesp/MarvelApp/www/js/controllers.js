@@ -65,7 +65,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('BrowseCtrl', function() {
+.controller('BrowseCtrl', function(  ) {
   // $scope.herois = [];
 
   // HeroisService.getHeroes().then(
