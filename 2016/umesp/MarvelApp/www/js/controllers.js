@@ -52,42 +52,77 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('HeroiCtrl', function() {
+.controller('HeroiCtrl', function($scope, $stateParams, HeroisService) {
+  $scope.heroi = {};
 
-  // HeroisService.getHero(heroiId).then(
-  //   function success(res){
-  //     $scope.heroi = res.data.results[0];
-  //   },
+  var heroiId = $stateParams.id;
 
-  //   function error(err){
-  //   }
-  // );
+  HeroisService.getHero(heroiId).then(
+    function success(res){
+      $scope.heroi = res.data.results[0];
+    },
+
+    function error(err){
+      console.log(err);
+    }
+  );
 
 })
 
-.controller('BrowseCtrl', function(  ) {
-  // $scope.herois = [];
+.controller('HeroisCtrl', function( $scope, HeroisService ) {
+  $scope.herois = [];
 
-  // HeroisService.getHeroes().then(
-  //   function success(res){
-  //     $scope.herois = res.data.results;
-  //   },
+  HeroisService.getHeroes().then(
+    function success(res){
+      $scope.herois = res.data.results;
+    },
 
-  //   function error(err){
-  //   }
-  // );
+    function error(err){
+      console.log(err);
+    }
+  );
 })
 
-.service('HeroisService', function() {
+.service('HeroisService', function($q, $http, $ionicLoading) {
 
   var self = {
     'getHeroes' : function(){
       // http://gateway.marvel.com:80/v1/public/characters?apikey=d0916763ab4a25748179417ef3627a75
       // $http.get('./data/heroesList.json')
+      var d = $q.defer();
+      $ionicLoading.show();
+
+      $http.get('http://gateway.marvel.com:80/v1/public/characters?apikey=d0916763ab4a25748179417ef3627a75')
+        .success(function(res){
+          $ionicLoading.hide();
+          d.resolve(res);
+        })
+
+        .error(function(err){
+          $ionicLoading.hide();
+          d.reject(err);
+        })
+
+      return d.promise;
     },
 
-    'getHero' : function(data){
+    'getHero' : function(id){
       // http://gateway.marvel.com:80/v1/public/characters/'+data+'?apikey=d0916763ab4a25748179417ef3627a75
+      var d = $q.defer();
+      $ionicLoading.show();
+
+      $http.get('http://gateway.marvel.com:80/v1/public/characters/'+id+'?apikey=d0916763ab4a25748179417ef3627a75')
+        .success(function(res){
+          $ionicLoading.hide();
+          d.resolve(res);
+        })
+
+        .error(function(err){
+          $ionicLoading.hide();
+          d.reject(err);
+        })
+
+      return d.promise;
     }
   };
 

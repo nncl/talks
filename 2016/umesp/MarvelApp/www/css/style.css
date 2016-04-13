@@ -1,10 +1,10 @@
 /* Empty. Add your own CSS if you like */
 
-/*.bar-header {
+.bar-header {
     background: red !important;
 }
 
 .title,
 .bar-stable .button.button-clear {
     color: #fff !important;
-}*/
+}

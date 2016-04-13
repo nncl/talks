@@ -1,0 +1,25 @@
+<ion-view view-title="Heróis">
+  <ion-content>
+
+<div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar" ng-model="model.search.name">
+      </label>
+    </div>
+
+   <div class="list">
+
+      <a class="item item-avatar" href="#/app/heroi/{{heroi.id}}" ng-repeat="heroi in herois | filter : model.search">
+        <!-- {{h.thumbnail.path}}/portrait_xlarge.jpg -->
+        <img ng-src=" {{heroi.thumbnail.path}}/portrait_xlarge.jpg ">
+        <h2> {{heroi.name}} </h2>
+        <p>
+          {{heroi.description}}
+        </p>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>
